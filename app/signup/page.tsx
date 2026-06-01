@@ -54,7 +54,7 @@ export default function Signup() {
     setLoading(true); setError('')
     const { error } = await supabase.auth.signUp({ email, password })
     if (error) setError(error.message)
-    else router.push('/verify-email')
+    else router.push('/login')
     setLoading(false)
   }
 
@@ -325,6 +325,7 @@ export default function Signup() {
                 >privacy policy</a>
               </span>
             </label>
+
 
             {/* Submit */}
             <button
