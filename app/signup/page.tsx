@@ -176,7 +176,7 @@ export default function Signup() {
                 FREE
               </span>
             </div>
-            <p style={{ color: '#4b5563', fontSize: '14px', margin: 0 }}>
+            <p style={{ color: '#c3c8d0', fontSize: '14px', margin: 0 }}>
               Join thousands of developers
             </p>
           </div>
@@ -312,7 +312,7 @@ export default function Signup() {
               >
                 {agreed && <Check size={10} strokeWidth={3} color="#fff" />}
               </div>
-              <span style={{ fontSize: '12px', color: '#4b5563', lineHeight: '1.5' }}>
+              <span style={{ fontSize: '12px', color: '#b4bcc7', lineHeight: '1.5' }}>
                 I agree to the{' '}
                 <a href="/terms" style={{ color: '#10b981', textDecoration: 'none' }}
                   onMouseEnter={e => (e.currentTarget.style.color = '#34d399')}
@@ -356,7 +356,7 @@ export default function Signup() {
           </form>
 
           {/* Footer link */}
-          <p style={{ textAlign: 'center', fontSize: '13px', color: '#374151', marginTop: '20px' }}>
+          <p style={{ textAlign: 'center', fontSize: '13px', color: '#d2d8e1', marginTop: '20px' }}>
             Already have an account?{' '}
             <a href="/login" style={{ color: '#10b981', fontWeight: 600, textDecoration: 'none', transition: 'color 0.15s' }}
               onMouseEnter={e => (e.currentTarget.style.color = '#34d399')}
@@ -367,7 +367,7 @@ export default function Signup() {
           </p>
         </div>
 
-        <p style={{ textAlign: 'center', fontSize: '12px', color: '#1f2937', marginTop: '24px' }}>
+        <p style={{ textAlign: 'center', fontSize: '12px', color: '#bec6d0', marginTop: '24px' }}>
           Trusted by developers worldwide
         </p>
       </div>

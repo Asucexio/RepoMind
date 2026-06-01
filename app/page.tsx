@@ -206,15 +206,17 @@ export default function LandingPage() {
           </div>
 
           <h1 className="fade-up delay-2 text-[clamp(2.8rem,7vw,5.5rem)] font-bold tracking-[-0.04em] leading-[1.05] mb-6">
-            <span style={{
-              background: d
-                ? 'linear-gradient(135deg, #ffffff 0%, #a1a1aa 40%, #10b981 100%)'
-                : 'linear-gradient(135deg, #111827 0%, #374151 40%, #10b981 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              display: 'inline',
-            }}>Chat with your<br />entire codebase</span>
+            <span
+              key={d ? 'dark' : 'light'}
+              style={{
+                background: d
+                  ? 'linear-gradient(135deg, #ffffff 0%, #a1a1aa 40%, #10b981 100%)'
+                  : 'linear-gradient(135deg, #111827 0%, #374151 40%, #10b981 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                display: 'inline-block',
+              }}>Chat with your<br />entire codebase</span>
           </h1>
 
           <p className={`fade-up delay-3 text-lg max-w-xl mx-auto mb-10 leading-relaxed font-light ${d ? 'text-zinc-400' : 'text-gray-500'}`}>

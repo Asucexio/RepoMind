@@ -105,7 +105,7 @@ export default function Login() {
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '32px' }}>
           <div style={{
             width: '44px', height: '44px', borderRadius: '12px',
-            background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+            background: 'linear-gradient(135deg, #e2ede9 0%, #f7f9f8 100%)',
             boxShadow: '0 0 30px rgba(16,185,129,0.4), 0 0 60px rgba(16,185,129,0.15), inset 0 1px 0 rgba(255,255,255,0.2)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             overflow: 'hidden',
@@ -113,7 +113,7 @@ export default function Login() {
             <img
               src="https://ik.imagekit.io/sl226drpx/grok-image-da915e64-fb0b-4722-9896-e90a54cc9528-removebg-preview.png"
               alt="RepoMind"
-              style={{ width: '28px', height: '28px', objectFit: 'contain' }}
+              style={{ width: '48px', height: '48px', objectFit: 'contain' }}
             />
           </div>
           <span style={{ color: '#f0fdf4', fontWeight: 700, fontSize: '18px', letterSpacing: '-0.02em' }}>
@@ -136,7 +136,7 @@ export default function Login() {
             <h1 style={{ color: '#f0fdf4', fontWeight: 700, fontSize: '22px', letterSpacing: '-0.02em', margin: 0 }}>
               Welcome back
             </h1>
-            <p style={{ color: '#4b5563', fontSize: '14px', marginTop: '4px' }}>
+            <p style={{ color: '#bcc3cc', fontSize: '14px', marginTop: '4px' }}>
               Sign in to continue to your workspace
             </p>
           </div>
@@ -199,7 +199,7 @@ export default function Login() {
           <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             {/* Email */}
             <div>
-              <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: '#6b7280', marginBottom: '6px', letterSpacing: '0.01em' }}>
+              <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: 'rgb(187, 193, 204)', marginBottom: '6px', letterSpacing: '0.01em' }}>
                 Email address
               </label>
               <input
@@ -229,7 +229,7 @@ export default function Login() {
             {/* Password */}
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
-                <label style={{ fontSize: '12px', fontWeight: 600, color: '#6b7280', letterSpacing: '0.01em' }}>
+                <label style={{ fontSize: '12px', fontWeight: 600, color: '#bec3cf', letterSpacing: '0.01em' }}>
                   Password
                 </label>
                 <a href="/forgot-password" style={{ fontSize: '12px', color: '#10b981', textDecoration: 'none', transition: 'color 0.15s' }}
@@ -314,7 +314,7 @@ export default function Login() {
           </form>
 
           {/* Footer link */}
-          <p style={{ textAlign: 'center', fontSize: '13px', color: '#374151', marginTop: '20px' }}>
+          <p style={{ textAlign: 'center', fontSize: '13px', color: '#f2f6fd', marginTop: '20px' }}>
             No account?{' '}
             <a href="/signup" style={{ color: '#10b981', fontWeight: 600, textDecoration: 'none', transition: 'color 0.15s' }}
               onMouseEnter={e => (e.currentTarget.style.color = '#34d399')}
@@ -326,7 +326,7 @@ export default function Login() {
         </div>
 
         {/* Bottom tagline */}
-        <p style={{ textAlign: 'center', fontSize: '12px', color: '#1f2937', marginTop: '24px' }}>
+        <p style={{ textAlign: 'center', fontSize: '12px', color: '#929aa6', marginTop: '24px' }}>
           Trusted by developers worldwide
         </p>
       </div>
