@@ -6,13 +6,10 @@ import { NextRequest, NextResponse } from "next/server";
 export const maxDuration = 60; // seconds (Vercel Pro / hobby max)
 export const dynamic = "force-dynamic";
 
-// llama-3.3-70b-versatile: ~32k token window.
-// 1 token ≈ 4 chars. Reserve ~8k tokens for system scaffold + reply.
-// Safe context budget: 24k tokens × 4 = 96k chars — but the system prompt
-// itself adds ~3k chars, so cap the REPO CONTEXT block at 60k chars.
-// Groq free tier: 12k TPM limit. Budget: ~8,900 tokens for context = ~35k chars.
-// Using 28k to leave margin for system prompt scaffold + reply + message history.
-const MAX_CONTEXT_CHARS = 28_000;
+// llama-3.1-8b-instant: 20k TPM on free tier, 8k context window.
+// Token budget: 8k total - 400 (system) - 500 (reply) - 200 (messages) = ~6,900 for context.
+// 6,900 tokens × 4 chars = ~27,600 chars. Use 16,000 to stay well clear.
+const MAX_CONTEXT_CHARS = 16_000;
 
 function truncateContext(raw: string): string {
   if (raw.length <= MAX_CONTEXT_CHARS) return raw;
@@ -57,7 +54,7 @@ export async function POST(request: NextRequest) {
 
     // Safety check — if even the truncated context + fixed overhead is huge,
     // cut it down one more time before sending.
-    const HARD_CAP = 26_000;
+    const HARD_CAP = 14_000;
     const finalContext =
       safeContext.length > HARD_CAP
         ? safeContext.slice(0, HARD_CAP) + "\n[hard-capped]"
@@ -83,9 +80,9 @@ Format: **bold** file/function names, \`inline code\` for paths, fenced code blo
         { role: "system", content: systemPrompt },
         ...messages,
       ],
-      model: "llama-3.3-70b-versatile",
+      model: "llama-3.1-8b-instant",  // higher TPM limit on free tier
       temperature: 0.3,
-      max_tokens: 15000,
+      max_tokens: 800,  // 8b model is fast; keep reply tight for free tier
       stream: true,
     });
 
